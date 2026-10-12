@@ -1,0 +1,31 @@
+# Build outputs
+/build*/
+/out/
+/.vs/
+*.obj
+*.o
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.pdb
+*.ilk
+*.exp
+
+# Python / notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+
+# Generated simulation outputs; keep source .bt inputs tracked
+Out*/
+/results/
+/runs/
+*.log
+
+# Local machine secrets
+.env
+.env.*
+!.env.example
