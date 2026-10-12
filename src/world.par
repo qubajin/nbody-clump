@@ -1,0 +1,64 @@
+
+########################################################################################################################
+#												           	#
+# PARAMETERS FOR THE SIMULATION OF FULL N-BODY PROBLEM (MSK UNITS)							#
+#														#
+# Note: This code was developed for simulating the motion of a bunch of irregular-shape particles   			# 
+#       viewed as an extended rigid bodies, i.e., homogenous polyhedra.						#
+#														#
+# Frames: OXYZ - World frame (inertial frame)			     						#
+#	  Bixyz - Body-fixed frame of Bi (Origin at the mass center, with principal axes of inertia Bix, Biy, Biz) 	#
+#														#
+######################################################################################################################## 
+#
+# 1. Input filenames 
+#
+# Note: in the code, the positions and velocities of particle mass centers are represented in frame OXYZ	
+#
+NumberBody	= 576	 	# F
+ClumpNum           =  144
+BranchLmtLen         = 256
+BodyFileDir	= ./Rocks/		# File naming rules
+IniConFile	= ph.00000000.bt		# F
+#
+# 2. Solving options setting (xxx format applied)
+#
+StepSize	= 1e-5	 	 	 # Step size of integration, unit: s (reduced for Earth gravity)
+EndStep		= 200000	 # Total simulated time = 1.0 s
+StartStep       = 0	          		 # Use this to change starting step numbering
+OutputInterval	= 10000		 # Output interval, file name like "res.000000000.bt", nine digits	
+#
+# 3. Surface mechanical parameters
+Ymod       = 2e7
+Prat           = 0.20
+Frcoe         = 0.50
+NormRes   = 0.20		
+Frvel          = 5e-4	
+Beta           = 0.5
+MU_T         = 0.5
+MU_R         = 0.5
+Cohesion    = 0.0
+# 4. Field force
+Gravity         = -9.81
+# 5. Grid
+Thresh        =1e-3
+GridLevels  = 1 
+# 6. Wall force
+Update = 0
+WorldSize_x     = 0.4
+WorldSize_y     = 0.4
+WorldSize_z     = 1
+WorldOrigin_x   = 0.0
+WorldOrigin_y   = 0.0
+WorldOrigin_z   = 0.0
+BoxUpLmt_x = 0.4
+BoxUpLmt_y = 0.4
+BoxUpLmt_z = 1
+BoxLowLmt_x = 0.0
+BoxLowLmt_y = 0.0
+BoxLowLmt_z = 0.0
+# 7. Intruder force
+isIntruder = 1
+isSelfGravity = 0
+isWallForce = 1
+isQuaternion = 1
